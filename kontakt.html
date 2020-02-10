@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<title>Naslovna strana</title>
+	<link rel='stylesheet' href='stil.css'>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<link rel="shortcut icon" href="img/ikonica-masinice.png" />
+
+</head>
+
+<body>
+	<div class='glavni'>
+		
+			<header>
+				<div class='logo'>
+					<a href='kontakt.html'>
+						<img src='img/logo.jpg' class='logo'>
+					</a>
+				</div>
+				<ul>
+					<li>
+						<a href='glavna.html'>Početna</a>
+					</li>
+				
+					<li>
+						<a href='tattoo.html'>Tattoo</a>
+					</li>
+					
+					<li>
+						<a href='galerija.html'>Galerija</a>
+					</li>
+						
+					<li class='active'>
+						<a href='kontakt.html'>Kontakt</a>
+					</li>
+				</ul>
+		
+			</header>
+			
+			<h1 class="main-heading">Gde nas možete pronaći</h1>
+
+
+			<div class="contact-wrapper">
+				<div class="contact-info">
+					<p class="strong">Studio lepote "Fortuna"</p>
+					<p>Nede Spasojevic 5, Beograd, Srbija</p>
+					<p>Tel: 060/555-333</p>
+					<p>Email: ostojic.tattoo@gmail.com</p>
+					<iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3876142124677!2d20.368476351807015!3d44.813667478996024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a6f67a25a0249%3A0x4ab13b96ae98bfbc!2sNede+Spasojevi%C4%87+5%2C+Beograd!5e0!3m2!1sen!2srs!4v1485577103068" width="420" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+				<div class="contact-form">
+					<label>Ime</label>
+						<input type="text" name="ime" id="ime"/>
+					<label>Email</label>
+						<input type="text" name="email" id="email"/>
+					<label>Poruka</label>
+						<textarea name="poruka" id="poruka"></textarea>
+					<p><a href="#" class="newsletter-button" onClick="posalji();">Pošalji</a></p>
+				</div>
+			</div>
+			
+			<div class='o-meni'>
+				<h2 class='poslednji-naslov'>Sajt radio:</h2>
+						<p>
+							<a class='bold' href='https://www.instagram.com/nikola_ostojic00/?hl=sr'>-Nikola Ostojic</a>
+						</p>
+						<p>
+							<a href='https://singidunum.ac.rs/'>-Student univerziteta Singidunum</a>
+						</p>
+						<p>
+							-Ovaj sajt je moj zavrsni ispit iz predmeta veb dizajn
+						</p>
+						<p>-Broj indeksa: 2019202918</p>
+				
+			</div>
+			
+			<footer class='footer'>
+				<div class='tekst'>
+					<p class="strong">Studio lepote "Fortuna"</p>
+					<p>Ismeta Mujezinovića 18/25, Beograd, Srbija</p>
+					<p>Tel: 060/555-333, Email: ostojic.tattoo@gmail.com</p>
+					<br>
+					<p class="small">Copyright © 2020 Studio lepote "Fortuna"</p>
+				</div>
+			</footer>
+			
+	</div>
+	
+<script type="text/javascript">
+
+function posalji(){
+		
+		var greske = [];
+		
+		var reg_ime = /^[A-Z][a-z]{1,}\s[A-Z][a-z]{1,}$/;
+		var imev = document.getElementById('ime').value;
+		if (imev.match(reg_ime)){} 
+		else {greske.push("Ime!");
+			alert("Greška u imenu.");
+		};
+		
+		var mail = document.getElementById('email').value;
+		reg_mail = /^[a-zA-Z0-9.]+[@]+[a-zA-Z0-9]+(\.)[a-z]{2,4}$/;
+		if (mail.match(reg_mail)){}
+		else{
+			greske.push("Email!");
+			alert("Greška u emailu.");
+		};
+		
+		var poruka = document.getElementById('poruka').value;
+		if (poruka.trim() == '')
+			{
+				greske.push("Poruka!");
+				alert("Greška u poruci.");
+			};
+		
+		if (greske.length!=0){}
+		else {
+			var slanje = "mailto:vogskola@yahoo.com?subject=Poruka&body=Ime: "+imev+"%0D%0A"+"Email: "+mail+"%0D%0A"+'Poruka: '+ poruka;
+			window.location.href = slanje;
+			};
+	};
+
+
+
+</script>
+
+</body>
+
+
+
+</html>
